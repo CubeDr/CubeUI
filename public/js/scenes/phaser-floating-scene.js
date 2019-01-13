@@ -1,4 +1,4 @@
-export class PhaserFloating extends Phaser.Scene {
+export class PhaserFloatingScene extends Phaser.Scene {
     constructor(config) {
         super(config);
     }

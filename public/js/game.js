@@ -1,4 +1,4 @@
-import { PhaserFloating } from './scenes/phaserFloating.js'
+import { PhaserFloatingScene } from './scenes/phaser-floating-scene.js'
 
 let config = {
     type: Phaser.AUTO,
@@ -10,7 +10,7 @@ let config = {
             gravity: { y: 200 }
         }
     },
-    scene: [PhaserFloating]
+    scene: [PhaserFloatingScene]
 };
 
 let game = new Phaser.Game(config);
