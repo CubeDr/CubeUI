@@ -7,5 +7,9 @@ class MainScene extends Phaser.Scene {
     }
 
     create() {
+        let w = new CUIWidget(this, {
+            margin: {left: 10},
+            padding: {top: 5}
+        });
     }
 }
