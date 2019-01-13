@@ -1,5 +1,3 @@
-import { MainScene } from './scenes/main-scene.js'
-
 let config = {
     type: Phaser.AUTO,
     width: 800,
