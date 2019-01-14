@@ -1,6 +1,6 @@
 class CUIWidget extends Phaser.GameObjects.GameObject {
     constructor(scene, config = {}) {
-        super(scene, CUIWidget._getValue(config.type, "CUIWidgent"));
+        super(scene, CUIWidget._getValue(config.type, "CUIWidget"));
         this._scene = scene;
 
         this._init(config);
