@@ -12,8 +12,26 @@ class CUIWidget extends Phaser.GameObjects.GameObject {
 
         this._updateBoundaryOffset();
         this._doDebuggingStuff();
+        this._setBackground();
+    }
 
-        console.log(this._x + ", " + this._y);
+    setBackground(backgroundKey) {
+        if(this._background) {
+            this._background.destroy();
+            this._background = null;
+        }
+
+        if(backgroundKey == null) return;
+
+        this._background = this._scene.add.image(0, 0, backgroundKey).setOrigin(0);
+        this._setBackground();
+    }
+
+    _setBackground() {
+        if(!this._background) return;
+        this._background.setPosition(this._marginRect.x, this._marginRect.y);
+        this._background.setScale(this._marginRect.w / this._background.width,
+            this._marginRect.h / this._background.height);
     }
 
     _init(config) {
@@ -83,8 +101,6 @@ class CUIWidget extends Phaser.GameObjects.GameObject {
             this._scene,
             {x: this._x, y: this._y, w: this._width, h: this._height},
             1, 0x99ff99, 1);
-
-        console.log(this._paddingRect);
 
         this._debugConfig._boundary.margin = CUIWidget._drawGraphicsLine(
             this._scene,

@@ -4,6 +4,7 @@ class MainScene extends Phaser.Scene {
     }
 
     preload() {
+        this.load.image('bandit', '../../assets/bandit.png');
     }
 
     create() {
@@ -12,13 +13,15 @@ class MainScene extends Phaser.Scene {
             y: 100,
             width: 100,
             height: 100,
-            margin: {left: 10},
-            padding: {top: 5},
+            margin: {left: 30},
+            padding: {left: 5, right: 5, bottom: 5, top: 20},
             debug: true
         });
 
         this.input.on('pointermove', (p) => {
             w.setPosition(p.x, p.y);
         });
+
+        w.setBackground('bandit');
     }
 }
